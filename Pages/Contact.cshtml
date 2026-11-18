@@ -1,0 +1,47 @@
+@page
+@model ContactModel
+@{
+    ViewData["Title"] = "Contact";
+}
+<section class="page-banner">
+    <span class="eyebrow">GET IN TOUCH</span>
+    <h1>Contact the RazorLab team</h1>
+    <p>This sample form demonstrates model binding, server-side validation and a post-submit confirmation.</p>
+</section>
+<section class="content-wrap contact-layout">
+    <div class="contact-info">
+        <span class="eyebrow">DEMONSTRATION FORM</span>
+        <h2>Send a sample message.</h2>
+        <p>Enter test information below. This learning project does not send email or save messages to a database.</p>
+        <div class="info-line"><strong>Framework</strong><span>ASP.NET Core Razor Pages</span></div>
+        <div class="info-line"><strong>Validation</strong><span>Data Annotations</span></div>
+        <div class="info-line"><strong>Processing</strong><span>OnPost handler</span></div>
+    </div>
+    <form method="post" class="contact-form">
+        <div asp-validation-summary="ModelOnly" class="validation-summary"></div>
+        @if (!string.IsNullOrWhiteSpace(Model.SuccessMessage))
+        {
+            <div class="success-message" role="status">@Model.SuccessMessage</div>
+        }
+        <label asp-for="Input.Name"></label>
+        <input asp-for="Input.Name" placeholder="Your full name" />
+        <span asp-validation-for="Input.Name" class="field-error"></span>
+
+        <label asp-for="Input.Email"></label>
+        <input asp-for="Input.Email" placeholder="name@example.com" />
+        <span asp-validation-for="Input.Email" class="field-error"></span>
+
+        <label asp-for="Input.Subject"></label>
+        <input asp-for="Input.Subject" placeholder="What is your message about?" />
+        <span asp-validation-for="Input.Subject" class="field-error"></span>
+
+        <label asp-for="Input.Message"></label>
+        <textarea asp-for="Input.Message" rows="5" placeholder="Write your sample message..."></textarea>
+        <span asp-validation-for="Input.Message" class="field-error"></span>
+
+        <button class="btn btn-primary" type="submit">Submit sample message →</button>
+    </form>
+</section>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

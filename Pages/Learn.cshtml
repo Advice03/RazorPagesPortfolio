@@ -1,0 +1,125 @@
+@page
+@model LearnModel
+@{
+    ViewData["Title"] = "Learn Razor Pages";
+}
+
+<section class="page-banner">
+    <span class="eyebrow">THE FUNDAMENTALS</span>
+    <h1>Learn ASP.NET Core Razor Pages</h1>
+    <p>
+        A page-based framework for building dynamic,
+        server-rendered web applications with .NET.
+    </p>
+</section>
+
+<section class="content-wrap section">
+
+    <div class="section-heading">
+        <div>
+            <span class="eyebrow">HOW IT WORKS</span>
+            <h2>Understand the building blocks.</h2>
+        </div>
+    </div>
+
+    <div class="learning-list">
+
+        <!-- 01 Razor Page -->
+        <article class="learning-item">
+            <span class="number">01</span>
+
+            <div>
+                <h3>Razor Page (.cshtml)</h3>
+
+                <p>
+                    This file contains the page markup.
+                    You can write HTML and use Razor expressions
+                    to display values from C#.
+                </p>
+
+                <pre><code>@@page
+@@model WelcomeModel
+
+&lt;h1&gt;Welcome, @@Model.UserName!&lt;/h1&gt;</code></pre>
+            </div>
+        </article>
+
+        <!-- 02 PageModel -->
+        <article class="learning-item">
+            <span class="number">02</span>
+
+            <div>
+                <h3>PageModel (.cshtml.cs)</h3>
+
+                <p>
+                    The PageModel contains the page's C# properties
+                    and handler methods. It prepares data and
+                    responds to page actions.
+                </p>
+
+                <pre><code>public class WelcomeModel : PageModel
+{
+    public string UserName { get; set; } = "Developer";
+
+    public void OnGet()
+    {
+    }
+}</code></pre>
+            </div>
+        </article>
+
+        <!-- 03 Handler methods -->
+        <article class="learning-item">
+            <span class="number">03</span>
+
+            <div>
+                <h3>Handler methods</h3>
+
+                <p>
+                    OnGet handles GET requests.
+                    OnPost handles form submissions.
+                    Named handlers can process different actions.
+                </p>
+
+                <pre><code>public void OnGet()
+{
+}
+
+public IActionResult OnPost()
+{
+    // Process submitted form data
+    return Page();
+}</code></pre>
+            </div>
+        </article>
+
+        <!-- 04 Tag Helpers -->
+        <article class="learning-item">
+            <span class="number">04</span>
+
+            <div>
+                <h3>Tag Helpers and validation</h3>
+
+                <p>
+                    Tag Helpers connect HTML elements to C#
+                    model properties. Data annotations define
+                    rules such as required fields and valid emails.
+                </p>
+
+                <pre><code>&lt;input asp-for="Email" class="form-control" /&gt;
+
+&lt;span asp-validation-for="Email"&gt;&lt;/span&gt;</code></pre>
+            </div>
+        </article>
+
+    </div>
+</section>
+
+<section class="content-wrap callout">
+    <h2>Typical request flow</h2>
+
+    <p>
+        Browser request → Razor Page → PageModel handler
+        → optional service or database → rendered HTML response.
+    </p>
+</section>

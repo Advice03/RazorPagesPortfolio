@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="An educational portfolio website demonstrating ASP.NET Core Razor Pages." />
+    <title>@ViewData["Title"] - RazorLab</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" asp-page="/Index"><span class="brand-mark">R</span> RazorLab</a>
+        <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+        <nav class="nav-links" aria-label="Main navigation">
+            <a asp-page="/Index">Home</a>
+            <a asp-page="/Learn">Learn Razor Pages</a>
+            <a asp-page="/Projects">Projects</a>
+            <a asp-page="/Contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        @RenderBody()
+    </main>
+
+    <footer class="footer">
+        <div>
+            <strong>RazorLab</strong>
+            <p>A learning and portfolio project built with ASP.NET Core Razor Pages.</p>
+        </div>
+        <p>© @DateTime.Now.Year RazorLab. Built for learning and demonstration.</p>
+    </footer>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

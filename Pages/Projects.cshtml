@@ -1,0 +1,24 @@
+@page
+@model ProjectsModel
+@{
+    ViewData["Title"] = "Projects";
+}
+<section class="page-banner">
+    <span class="eyebrow">PRACTICAL APPLICATION</span>
+    <h1>Project ideas for your portfolio</h1>
+    <p>Use these ideas to practise Razor Pages, C#, validation, data storage and application design.</p>
+</section>
+<section class="content-wrap section">
+    <div class="project-grid">
+        @foreach (var project in Model.Projects)
+        {
+            <article class="project-card">
+                <div class="project-top"><span class="project-symbol">@project.Symbol</span><span class="tag">@project.Level</span></div>
+                <h2>@project.Name</h2>
+                <p>@project.Description</p>
+                <div class="tag-row">@foreach (var tech in project.Technologies) { <span class="tag tag-muted">@tech</span> }</div>
+            </article>
+        }
+    </div>
+    <div class="callout"><h2>Portfolio tip</h2><p>For each project, include a clear README, screenshots, setup instructions, feature list and a short explanation of the technical decisions you made.</p></div>
+</section>

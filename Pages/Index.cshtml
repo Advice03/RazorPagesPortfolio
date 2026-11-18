@@ -1,0 +1,161 @@
+@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+<section class="hero">
+    <div class="hero-content">
+        <span class="eyebrow">ASP.NET CORE • RAZOR PAGES • C#</span>
+
+        <h1>
+            Build modern websites with
+            <span>Razor Pages.</span>
+        </h1>
+
+        <p>
+            Explore how server-rendered pages, C# page models,
+            validation and reusable layouts work together to create
+            clean, maintainable web applications.
+        </p>
+
+        <div class="hero-actions">
+            <a class="btn btn-primary" asp-page="/Learn">
+                Start learning <span>→</span>
+            </a>
+
+            <a class="btn btn-secondary" asp-page="/Projects">
+                Explore projects
+            </a>
+        </div>
+
+        <div class="hero-note">
+            <span class="status-dot"></span>
+            A practical, interactive learning demo
+        </div>
+    </div>
+
+    <div class="hero-visual"
+         aria-label="Illustration of a Razor Pages code editor">
+
+        <div class="code-window">
+            <div class="window-bar">
+                <i></i>
+                <i></i>
+                <i></i>
+                <span>Index.cshtml</span>
+            </div>
+
+            <pre><code><b>@@page</b>
+<b>@@model</b> IndexModel
+
+&lt;h1&gt;Hello, Razor Pages!&lt;/h1&gt;
+
+&lt;form method="post"&gt;
+  &lt;input asp-for="Name" /&gt;
+  &lt;button type="submit"&gt;
+    Continue
+  &lt;/button&gt;
+&lt;/form&gt;</code></pre>
+
+            <div class="code-status">
+                ✓ Ready to build
+            </div>
+        </div>
+
+        <div class="floating-chip chip-top">
+            C# backend
+        </div>
+
+        <div class="floating-chip chip-bottom">
+            Reusable UI
+        </div>
+    </div>
+</section>
+
+<section class="stats content-wrap">
+    <div>
+        <strong>01</strong>
+        <span>Page-focused structure</span>
+    </div>
+
+    <div>
+        <strong>02</strong>
+        <span>C# page models</span>
+    </div>
+
+    <div>
+        <strong>03</strong>
+        <span>Built-in validation</span>
+    </div>
+
+    <div>
+        <strong>04</strong>
+        <span>Reusable layouts</span>
+    </div>
+</section>
+
+<section class="section content-wrap">
+    <div class="section-heading">
+        <div>
+            <span class="eyebrow">WHAT YOU WILL LEARN</span>
+            <h2>Everything starts with a page.</h2>
+        </div>
+
+        <p>
+            Razor Pages keeps the page and its handling logic close
+            together, making it approachable for small and medium-sized
+            web applications.
+        </p>
+    </div>
+
+    <div class="feature-grid">
+        <article class="feature-card">
+            <div class="icon-box">⌘</div>
+            <h3>Razor syntax</h3>
+            <p>
+                Combine HTML with C# expressions and directives
+                to render dynamic content on the server.
+            </p>
+            <a asp-page="/Learn">Explore Razor syntax →</a>
+        </article>
+
+        <article class="feature-card">
+            <div class="icon-box">⚙</div>
+            <h3>PageModel logic</h3>
+            <p>
+                Use handlers such as OnGet and OnPost to respond
+                to requests and process submitted forms.
+            </p>
+            <a asp-page="/Learn">Understand handlers →</a>
+        </article>
+
+        <article class="feature-card">
+            <div class="icon-box">✓</div>
+            <h3>Form validation</h3>
+            <p>
+                Validate user input with data annotations
+                and display clear validation feedback.
+            </p>
+            <a asp-page="/Contact">Try the contact form →</a>
+        </article>
+    </div>
+</section>
+
+<section class="cta content-wrap">
+    <div>
+        <span class="eyebrow">READY TO PRACTISE?</span>
+
+        <h2>Turn concepts into working projects.</h2>
+
+        <p>
+            Browse sample project ideas and use this site
+            as a starting point for your own portfolio.
+        </p>
+    </div>
+
+    <a class="btn btn-light" asp-page="/Projects">
+        View project ideas →
+    </a>
+</section>
+
